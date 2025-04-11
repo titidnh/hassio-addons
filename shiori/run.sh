@@ -1,12 +1,5 @@
-#!/usr/bin/with-contenv bashio
+#!/bin/sh
 
-PORT=8080
-DATA_DIR="/data"
+# Start Shiori with s6
+exec /usr/local/bin/shiori serve --port 8080 --dir /data
 
-bashio::log.info "Starting Shiori on port ${PORT}"
-bashio::log.info "Using data directory: ${DATA_DIR}"
-
-mkdir -p "$DATA_DIR"
-
-# Start shiori with custom data directory and port
-exec shiori serve --port "$PORT" --dir "$DATA_DIR"
