@@ -1,6 +1,6 @@
 #!/usr/bin/with-contenv bashio
 
-PORT=$(bashio::config 'port')
+PORT=8080
 DATA_DIR="/data"
 
 bashio::log.info "Starting Shiori on port ${PORT}"

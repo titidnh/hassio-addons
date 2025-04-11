@@ -1,5 +1,5 @@
 name: Shiori Bookmark
-version: "1.0.0"
+version: "1.0.1"
 slug: shiori
 description: "Self-hosted bookmark manager"
 arch:
@@ -10,8 +10,6 @@ startup: services
 boot: auto
 ports:
   8080/tcp: 8080
-options:
-  port: 8080
 schema:
   port: int
 map:
