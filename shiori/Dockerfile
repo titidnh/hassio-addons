@@ -1,6 +1,8 @@
 ARG BUILD_FROM
 FROM ${BUILD_FROM}
 
+ARG BUILD_ARCH
+
 # Install necessary dependencies
 RUN apk add --no-cache curl tar bash \
     && curl -L -o /tmp/s6-overlay.tar.gz https://github.com/just-containers/s6-overlay/releases/download/v2.1.0.1/s6-overlay-amd64.tar.gz \
@@ -8,7 +10,7 @@ RUN apk add --no-cache curl tar bash \
     && rm -f /tmp/s6-overlay.tar.gz
 
 # Download and install Shiori based on architecture
-RUN ARCH=$(uname -m) && \
+RUN ARCH="${BUILD_ARCH}" && \
     if [ "$ARCH" = "x86_64" ]; then ARCH_TAG="x86_64"; \
     elif [ "$ARCH" = "aarch64" ]; then ARCH_TAG="aarch64"; \
     elif [ "$ARCH" = "armv7l" ] || [ "$ARCH" = "armv7" ]; then ARCH_TAG="arm"; \
