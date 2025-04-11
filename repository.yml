@@ -1,0 +1,4 @@
+# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
+name: TitiDnh Home Assistant Add-Ons
+url: 'https://github.com/titidnh/hassio-addons'
+maintainer: thouat
