@@ -1,6 +1,6 @@
 name: "Shiori Bookmark"
 description: "Self-hosted bookmark manager"
-version: "1.2.5"
+version: "1.2.6"
 slug: "shiori"
 init: false
 arch:
@@ -11,6 +11,7 @@ arch:
   - i386
 startup: services
 boot: auto
+backup: cold
 ports:
   8080/tcp: 8080
 map:
