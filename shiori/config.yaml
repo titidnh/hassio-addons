@@ -1,14 +1,16 @@
-name: Shiori Bookmark
-version: "1.0.10"
-slug: shiori
+name: "Shiori Bookmark"
 description: "Self-hosted bookmark manager"
+version: "1.2.5"
+slug: "shiori"
+init: false
 arch:
-  - amd64
-  - armv7
   - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
 startup: services
 boot: auto
-ingress: true
 ports:
   8080/tcp: 8080
 map:
