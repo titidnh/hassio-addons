@@ -1,4 +1,4 @@
-FROM ghcr.io/go-shiori/shiori:1.7.4
+FROM ghcr.io/go-shiori/shiori:latest
 
 VOLUME ["/data"]
 WORKDIR /data
