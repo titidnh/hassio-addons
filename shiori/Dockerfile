@@ -5,4 +5,4 @@ WORKDIR /data
 EXPOSE 8080
 
 ENTRYPOINT ["/usr/bin/shiori"]
-CMD ["serve", "--port", "8080", "--storage-directory", "/data"]
+CMD ["server", "--port", "8080", "--storage-directory", "/data"]
