@@ -13,8 +13,8 @@ boot: auto
 backup: true
 ingress: true
 webui: "http://[HOST]:[PORT]"
-ports:
-  8080/tcp: null
+# ports:
+#   8080/tcp: null
 map:
   - config:rw
   - share:rw
