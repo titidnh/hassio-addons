@@ -1,5 +1,10 @@
 name: "Shiori Bookmark"
+<<<<<<< HEAD
 version: "1.2.12"
+=======
+description: "Self-hosted bookmark manager"
+version: "1.2.11"
+>>>>>>> 6cf14fd68d9a66470c055e008147d939e45c0e2b
 slug: "shiori"
 description: "Self-hosted bookmark manager with Ingress support"
 arch:
