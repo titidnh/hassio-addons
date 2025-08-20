@@ -1,6 +1,6 @@
 name: "Shiori Bookmark"
 description: "Self-hosted bookmark manager"
-version: "1.2.9"
+version: "1.2.10"
 slug: "shiori"
 init: false
 arch:
@@ -19,3 +19,8 @@ map:
   - share:rw
 options:
   port: 8080
+# Ingress possible (accès direct via l’UI HA)
+ingress: true
+ingress_port: 8080
+panel_icon: "mdi:bookmark"
+panel_title: "Shiori"
