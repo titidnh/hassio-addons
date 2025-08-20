@@ -19,5 +19,3 @@ map:
   - share:rw
 options:
   port: 8080
-schema:
-  port: int(1024, 65535)  
