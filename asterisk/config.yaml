@@ -11,5 +11,4 @@ boot: auto
 backup: cold
 host_network: true
 map:
-  - config:r
-ports: []
+  - config:rw
