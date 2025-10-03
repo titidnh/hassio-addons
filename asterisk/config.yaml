@@ -1,0 +1,14 @@
+name: "Asterisk"
+description: "Self-hosted Asterisk"
+version: "1.0.0"
+slug: "asterisk"
+init: false
+arch:
+  - amd64
+  - aarch64
+startup: services
+boot: auto
+backup: cold
+host_network: true
+map:
+  - config:r
