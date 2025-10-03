@@ -1,9 +1,14 @@
 FROM alpine:latest
-#WORKDIR /config/asterisk
 
+# Installer Asterisk
 RUN apk add --no-cache asterisk
 
-COPY run.sh /
+# Copier le script de démarrage
+COPY run.sh /run.sh
 RUN chmod +x /run.sh
 
+# Dossier de travail par défaut (utile pour les logs ou fichiers temporaires)
+WORKDIR /config/asterisk
+
+# Lancer Asterisk via run.sh
 CMD ["/run.sh"]
