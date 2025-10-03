@@ -1,6 +1,6 @@
 name: "Shiori Bookmark"
 description: "Self-hosted bookmark manager"
-version: "1.2.13"
+version: "1.2.14"
 slug: "shiori"
 init: false
 arch:
