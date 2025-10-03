@@ -11,5 +11,5 @@ boot: auto
 backup: cold
 host_network: true
 map:
-  - /config/asterisk:/etc/asterisk:rw
+  - config:r
 ports: []
