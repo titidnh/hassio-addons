@@ -1,5 +1,7 @@
 #!/bin/sh
 
+ln -sfn /config/asterisk /etc/asterisk
+
 echo "🚀 Démarrage d'Asterisk avec config dans /etc/asterisk"
 
 echo "🔍 Vérification du contenu du dossier /etc/asterisk :"
