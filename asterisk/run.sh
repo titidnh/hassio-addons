@@ -3,7 +3,7 @@
 echo "🚀 Création du lien symbolique pour que /etc/asterisk pointe vers /config/asterisk"
 
 mkdir -p /config/asterisk
-ln -sfn /config/asterisk /etc/asterisk
+ln -sfn /config/asterisk /etc
 
 echo "🚀 Démarrage d'Asterisk avec config dans /etc/asterisk"
 
