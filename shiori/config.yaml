@@ -1,6 +1,6 @@
 name: "Shiori Bookmark"
 description: "Self-hosted bookmark manager"
-version: "1.2.14"
+version: "1.2.15"
 slug: "shiori"
 init: false
 arch:
@@ -16,5 +16,3 @@ ports:
   8080/tcp: 8080
 map:
   - config:rw
-options:
-  port: 8080
