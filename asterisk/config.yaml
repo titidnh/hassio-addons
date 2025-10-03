@@ -1,6 +1,6 @@
 name: "Asterisk"
 description: "Self-hosted Asterisk"
-version: "1.0.0"
+version: "1.0.1"
 slug: "asterisk"
 init: false
 arch:
@@ -11,4 +11,5 @@ boot: auto
 backup: cold
 host_network: true
 map:
-  - config:r
+  - /config/asterisk:/etc/asterisk:rw
+ports: []

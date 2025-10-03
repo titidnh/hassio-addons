@@ -1,5 +1,5 @@
 FROM alpine:latest
-WORKDIR /config/asterisk
+#WORKDIR /config/asterisk
 
 RUN apk add --no-cache asterisk
 
