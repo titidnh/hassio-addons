@@ -1,6 +1,6 @@
 name: "Asterisk"
 description: "Self-hosted Asterisk"
-version: "1.0.3"
+version: "1.0.4"
 slug: "asterisk"
 init: false
 arch:
