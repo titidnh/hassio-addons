@@ -31,14 +31,14 @@ chown -R proxy:proxy /etc/squid || true
 chmod -R 644 /etc/squid/* || true
 
 # --- Lancer scripts personnalisés s’ils existent ---
-if [ -x /etc/squid/updateAdServersList.sh ]; then
+if [ -x /updateAdServersList.sh ]; then
     echo "Exécution de updateAdServersList.sh..."
-    sh /etc/squid/updateAdServersList.sh || echo "⚠️ Erreur dans updateAdServersList.sh"
+    sh /updateAdServersList.sh || echo "⚠️ Erreur dans updateAdServersList.sh"
 fi
 
-if [ -x /etc/squid/updateEasyList.sh ]; then
+if [ -x /updateEasyList.sh ]; then
     echo "Exécution de updateEasyList.sh..."
-    sh /etc/squid/updateEasyList.sh || echo "⚠️ Erreur dans updateEasyList.sh"
+    sh updateEasyList.sh || echo "⚠️ Erreur dans updateEasyList.sh"
 fi
 
 # --- Lancer Squid ---
