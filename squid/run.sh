@@ -1,17 +1,18 @@
 #!/bin/bash
-set -e
+set -euo pipefail
 
-# Créer /config/squid si nécessaire
+# --- Nettoyage complet de /etc/squid ---
+echo "Nettoyage complet de /etc/squid..."
+rm -rf /etc/squid/*
+mkdir -p /etc/squid/conf.d
+
+# --- Créer /config/squid si nécessaire ---
 if [ ! -d /config/squid ]; then
     echo "Création du dossier /config/squid"
     mkdir -p /config/squid
-    touch /config/squid/adServersListEasyList.txt
 fi
 
-# Créer /etc/squid/conf.d
-mkdir -p /etc/squid/conf.d
-
-# Copier fichiers conf.d
+# --- Copier fichiers conf.d ---
 if [ "$(ls -A /config/squid 2>/dev/null)" ]; then
     echo "Utilisation des configs depuis /config/squid"
     cp -r /config/squid/* /etc/squid/conf.d/
@@ -20,20 +21,31 @@ else
     cp -r /addon/conf.d/* /etc/squid/conf.d/
 fi
 
-# Copier squid.conf
+# --- Copier le squid.conf principal ---
 if [ -f /config/squid/squid.conf ]; then
+    echo "Chargement du squid.conf utilisateur"
     cp /config/squid/squid.conf /etc/squid/squid.conf
 else
+    echo "Chargement du squid.conf par défaut"
     cp /addon/conf/squid.conf /etc/squid/squid.conf
 fi
 
-# Fixer permissions
-chown -R proxy:proxy /etc/squid
-chmod -R 644 /etc/squid/conf.d/*
+# --- Fixer les permissions ---
+echo "Fixation des permissions..."
+chown -R proxy:proxy /etc/squid || true
+chmod -R 644 /etc/squid/conf.d/* || true
 
-# Lancer scripts personnalisés
-sh /etc/squid/updateAdServersList.sh
-sh /etc/squid/updateEasyList.sh
+# --- Lancer scripts personnalisés s’ils existent ---
+if [ -x /etc/squid/updateAdServersList.sh ]; then
+    echo "Exécution de updateAdServersList.sh..."
+    sh /etc/squid/updateAdServersList.sh || echo "⚠️ Erreur dans updateAdServersList.sh"
+fi
 
-# Lancer Squid
+if [ -x /etc/squid/updateEasyList.sh ]; then
+    echo "Exécution de updateEasyList.sh..."
+    sh /etc/squid/updateEasyList.sh || echo "⚠️ Erreur dans updateEasyList.sh"
+fi
+
+# --- Lancer Squid ---
+echo "Démarrage de Squid..."
 exec squid -N -f /etc/squid/squid.conf
