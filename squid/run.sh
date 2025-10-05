@@ -28,7 +28,7 @@ fi
 # --- Fixer les permissions ---
 echo "Fixation des permissions..."
 chown -R proxy:proxy /etc/squid || true
-chmod -R 644 /etc/squid/conf.d/* || true
+chmod -R 644 /etc/squid/* || true
 
 # --- Lancer scripts personnalisés s’ils existent ---
 if [ -x /etc/squid/updateAdServersList.sh ]; then
