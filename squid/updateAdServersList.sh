@@ -3,7 +3,7 @@
 #####################################
 # From yoyo.org
 adServersListRegex="https://pgl.yoyo.org/adservers/serverlist.php?hostformat=squid-dstdom-regex&showintro=0&startdate%5Bday%5D=01&startdate%5Bmonth%5D=01&startdate%5Byear%5D=2017&mimetype=plaintext"
-adserverslistRegexfile="/etc/squid/adServersListyoyo.txt"
+adserverslistRegexfile="adServersListyoyo.txt"
 
 printf "Downloading Ad Servers list: yoyo.org... "
 curl -sSL "$adServersListRegex" > $adserverslistRegexfile && printf "Done.\n\n"
@@ -12,7 +12,7 @@ curl -sSL "$adServersListRegex" > $adserverslistRegexfile && printf "Done.\n\n"
 #####################################
 # From StevenBlack
 adServersList="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-adserverslistfile="/etc/squid/adServersListStevenBlack.txt"
+adserverslistfile="adServersListStevenBlack.txt"
 
 printf "Downloading Ad Servers list: StevenBlack... "
 curl -sSL "$adServersList" > $adserverslistfile && printf "Done.\n\n"
@@ -34,7 +34,7 @@ sed -i '/^[[:space:]]*$/d' $adserverslistfile
 #####################################
 # From StevenBlack (Porn)
 pornServersList="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-only/hosts"
-pornserverslistfile="/etc/squid/pornServersListStevenBlack.txt"
+pornserverslistfile="pornServersListStevenBlack.txt"
 
 printf "Downloading Porn Servers list: StevenBlack... "
 curl -sSL "$pornServersList" > $pornserverslistfile && printf "Done.\n\n"
@@ -56,7 +56,7 @@ sed -i '/^[[:space:]]*$/d' $pornserverslistfile
 #####################################
 # From  OISD
 adOisdServersList="https://raw.githubusercontent.com/cbuijs/oisd/master/big/domains"
-adOisdserverslistfile="/etc/squid/adServersListOISD.txt"
+adOisdserverslistfile="adServersListOISD.txt"
 
 printf "Downloading Ad Servers list: OISD... "
 curl -sSL "$adOisdServersList" > $adOisdserverslistfile && printf "Done.\n\n"
@@ -71,7 +71,7 @@ sed -i '/^[[:space:]]*$/d' $adOisdserverslistfile
 #####################################
 # From AdAway
 adServersListAdAway="https://adaway.org/hosts.txt"
-adserverslistAdAwayfile="/etc/squid/adServersListAdAway.txt"
+adserverslistAdAwayfile="adServersListAdAway.txt"
 
 printf "Downloading Ad Servers list: AdAway... "
 curl -sSL "$adServersListAdAway" > $adserverslistAdAwayfile && printf "Done.\n\n"
@@ -88,7 +88,7 @@ sed -i '/^[[:space:]]*$/d' $adserverslistAdAwayfile
 #####################################
 # From NoPorn
 #adServersListNoPorn="https://raw.githubusercontent.com/zangadoprojets/pi-hole-blocklist/main/Pornpages.txt"
-#adserverslistNoPornfile="/etc/squid/adServersListNoPorn.txt"
+#adserverslistNoPornfile="adServersListNoPorn.txt"
 
 #printf "Downloading Ad Servers list: No Porn... "
 #curl -sSL "$adServersListNoPorn" > $adserverslistNoPornfile && printf "Done.\n\n"
@@ -105,7 +105,7 @@ sed -i '/^[[:space:]]*$/d' $adserverslistAdAwayfile
 #####################################
 # From NoTrack
 adServersListNoTrack="https://adguardteam.github.io/HostlistsRegistry/assets/filter_32.txt"
-adserverslistNoTrackfile="/etc/squid/adServersListNoTrack.txt"
+adserverslistNoTrackfile="adServersListNoTrack.txt"
 
 printf "Downloading Ad Servers list: No Track... "
 curl -sSL "$adServersListNoTrack" > $adserverslistNoTrackfile && printf "Done.\n\n"
@@ -121,4 +121,3 @@ sed -i 's/\^//' $adserverslistNoTrackfile
 
 # white lines
 sed -i '/^[[:space:]]*$/d' $adserverslistNoTrackfile
-
