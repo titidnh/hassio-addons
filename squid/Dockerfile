@@ -1,7 +1,7 @@
 FROM debian:trixie-slim
 
 # Installer Squid
-RUN apt-get update && apt-get install -y squid && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y squid curl wget && rm -rf /var/lib/apt/lists/*
 
 # Copier scripts et run.sh
 COPY run.sh /run.sh
