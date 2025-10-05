@@ -31,8 +31,8 @@ chown -R proxy:proxy /etc/squid
 chmod -R 644 /etc/squid/conf.d/*
 
 # Lancer scripts personnalisés
-./updateAdServersList.sh
-./updateEasyList.sh
+sh /etc/squid/updateAdServersList.sh
+sh /etc/squid/updateEasyList.sh
 
 # Lancer Squid
 exec squid -N -f /etc/squid/squid.conf
