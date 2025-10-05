@@ -1,0 +1,16 @@
+name: "Squid Proxy"
+version: "1.0.0"
+slug: "squid"
+description: "Proxy HTTP/HTTPS avec Squid pour Home Assistant"
+arch:
+  - amd64
+  - armv7
+  - arm64
+startup: "services"
+boot: "auto"
+ports:
+  "3128/tcp": 3128
+options: {}
+schema: {}
+map:
+  - ["config/squid", "/config/squid", "rw"]
