@@ -5,6 +5,7 @@ set -e
 if [ ! -d /config/squid ]; then
     echo "Création du dossier /config/squid"
     mkdir -p /config/squid
+    touch /config/squid/adServersListEasyList.txt
 fi
 
 # Créer /etc/squid/conf.d
