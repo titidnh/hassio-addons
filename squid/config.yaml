@@ -1,6 +1,6 @@
 name: "Squid"
 description: "Squid HTTP/HTTPS Proxy"
-version: "1.0.3"
+version: "1.0.4"
 slug: "squid"
 init: false
 arch:
