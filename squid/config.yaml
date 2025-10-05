@@ -13,4 +13,4 @@ ports:
 options: {}
 schema: {}
 map:
-  - ["config/squid", "/config/squid", "rw"]
+  - config:rw
