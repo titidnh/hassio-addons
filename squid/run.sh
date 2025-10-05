@@ -12,22 +12,17 @@ if [ ! -d /config/squid ]; then
     mkdir -p /config/squid
 fi
 
+echo "Chargement du squid.conf par défaut"
+cp /addon/conf/squid.conf /etc/squid/squid.conf
+
 # --- Copier fichiers conf.d ---
 if [ "$(ls -A /config/squid 2>/dev/null)" ]; then
     echo "Utilisation des configs depuis /config/squid"
-    cp -r /config/squid/* /etc/squid/conf.d/
+    rm /etc/squid/squid.conf
+    cp -r /config/squid/* /etc/squid/
 else
     echo "Aucune config utilisateur, copie des configs par défaut depuis Git"
     cp -r /addon/conf.d/* /etc/squid/conf.d/
-fi
-
-# --- Copier le squid.conf principal ---
-if [ -f /config/squid/squid.conf ]; then
-    echo "Chargement du squid.conf utilisateur"
-    cp /config/squid/squid.conf /etc/squid/squid.conf
-else
-    echo "Chargement du squid.conf par défaut"
-    cp /addon/conf/squid.conf /etc/squid/squid.conf
 fi
 
 # --- Fixer les permissions ---
