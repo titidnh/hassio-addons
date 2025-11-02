@@ -1,0 +1,15 @@
+name: "Unbound"
+description: "Unbound DNS"
+version: "1.0.0"
+slug: "unbounddns"
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+startup: services
+boot: auto
+backup: cold
+ports:
+  5053/tcp: 5053
+  5053/udp: 5053
