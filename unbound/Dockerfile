@@ -3,6 +3,7 @@ FROM alpine:latest
 ENV UNBOUND_PORT=5053
 
 RUN apk update && apk upgrade && apk add --no-cache \
+    sudo \
     tini \
     curl \
     gettext \
