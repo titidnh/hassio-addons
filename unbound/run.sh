@@ -10,4 +10,4 @@ chmod 644 /etc/unbound/root.hints
 unbound-anchor -a /etc/unbound/root.key -vvv || true
 
 # 3️⃣ Start Unbound in foreground (PID 1)
-exec /usr/sbin/unbound -c /etc/unbound/unbound.conf -v -d
+exec /usr/sbin/unbound -c /etc/unbound/unbound.conf -d
