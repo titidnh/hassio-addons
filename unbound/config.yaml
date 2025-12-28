@@ -1,6 +1,6 @@
 name: "Unbound"
 description: "Unbound DNS"
-version: "1.0.2"
+version: "1.0.3"
 slug: "unbounddns"
 init: false
 arch:
