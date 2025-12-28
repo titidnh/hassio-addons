@@ -13,8 +13,7 @@ RUN apk update && apk upgrade && apk add --no-cache \
 COPY unbound.conf /etc/unbound/unbound.conf
 COPY run.sh /run.sh
 RUN chmod +x /run.sh
-
-RUN echo "net.core.rmem_max=1048576" >> /etc/sysctl.conf
+RUN chown -R unbound:unbound /etc/unbound
 
 HEALTHCHECK CMD dig @127.0.0.1 -p ${UNBOUND_PORT} google.fr || exit 1
 
